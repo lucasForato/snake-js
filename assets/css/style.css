@@ -13,6 +13,17 @@ body {
   background-color: rgb(226, 226, 226);
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app .upper {
+  margin-bottom: 20px;
+}
+
 .canvas {
   width: 320px;
   height: 320px;
@@ -29,14 +40,30 @@ body {
   height: 16px;
   background-color: white;
   z-index: 100;
-  grid-column: 10;
-  grid-row: 10;
+
 }
 
-/*
+.tail {
+  width: 16px;
+  height: 16px;
+  background-color: rgb(207, 207, 207);
+  z-index: 100;
+}
+
+
 .apple {
   width: 16px;
   height: 16px;
   background-color: rgb(255, 0, 0);
 }
-*/
+
+h1 {
+  font-family: 'Fruktur', cursive;
+  font-size: 40px;
+}
+
+span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}

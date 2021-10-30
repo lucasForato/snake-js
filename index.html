@@ -2,13 +2,29 @@
 <html>
     <head>
         <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="./assets/js/snake.js" defer></script>
+        <script src="./assets/js/apple.js" defer></script>
         <script src="./assets/js/script.js" defer></script>
-        <script src="./assets/js/movement.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fruktur&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">  
+        <title>Snake</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+
     </head>
     <body>
-        <div class='canvas' id='canvas'>
-            <div class='snake' id='snake'></div>
-            <div class='apple' id='apple'></div>
+        <div class='app'>
+            <div class='upper'>
+                <h1>SNAKE</h1>
+                <span class="score" id='score'>score: 0</span>
+            </div>
+            <div class='canvas' id='canvas'>
+                <div class='snake' id='snake'></div>
+            </div>
         </div>
     </body>
 </html>
