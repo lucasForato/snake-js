@@ -1,4 +1,6 @@
 const snakeDom = document.getElementById('snake');
+const speed = 120;
+let gameover = false;
 
 class Snake {
     constructor() {
@@ -30,6 +32,9 @@ class Snake {
         } else {
             this._y = 20;
         }
+        if(counter > 0) {
+            gameover = this.checkTouch(this._tail);
+        } 
     }
 
     goDown(){
@@ -38,6 +43,9 @@ class Snake {
             this._y++;
         } else {
             this._y = 1;
+        }
+        if(counter > 0) {
+            gameover = this.checkTouch(this._tail);
         }
     }
 
@@ -48,6 +56,9 @@ class Snake {
         } else {
             this._x = 20;
         }
+        if(counter > 0) {
+            gameover = this.checkTouch(this._tail);
+        }
     }
 
     goRight(){
@@ -57,6 +68,9 @@ class Snake {
         } else {
             this._x = 1;
         }
+        if(counter > 0) {
+            gameover = this.checkTouch(this._tail);
+        }
     }
 
     checkMouth(obj) {
@@ -64,6 +78,15 @@ class Snake {
             this.growTail(obj._x, obj._y);
             obj.generateNewLocation();
         }
+    }
+
+    checkTouch(arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(this.x === arr[i]._x && this.y === arr[i]._y) {
+                return true;
+            }
+        }
+        return false;
     }
 
     growTail(x, y) {
@@ -96,18 +119,6 @@ class Snake {
                 this._tail[i]._y = this._tail[i-1]._y;
             }
         }
-        /*
-        this._tail.forEach(element => {
-            if(i === 0) {
-                const tail = document.getElementById(element.class);
-                tail.style.gridRow = this.y;
-                tail.style.gridColumn = this.x;
-                element._x = this.x;
-                element._y = this.y;
-            }
-            i++;
-        })
-        */
     }
 };
 
@@ -116,5 +127,6 @@ const snake = new Snake();
 const updateSnake = () => {
     snakeDom.style.gridRow = snake.y;
     snakeDom.style.gridColumn = snake.x;
+    
 }
 

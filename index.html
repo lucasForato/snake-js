@@ -20,10 +20,17 @@
         <div class='app'>
             <div class='upper'>
                 <h1>SNAKE</h1>
+                <p class='pc'>You can use the keys [w, a, s, d] to play</p>
                 <span class="score" id='score'>score: 0</span>
             </div>
             <div class='canvas' id='canvas'>
                 <div class='snake' id='snake'></div>
+            </div>
+            <div class='controler'>
+                <button class='up' onclick='cellCode(event)'>up</button>
+                <button class='down' onclick='cellCode(event)'>down</button>
+                <button class='left' onclick='cellCode(event)'>left</button>
+                <button class='right' onclick='cellCode(event)'>right</button>
             </div>
         </div>
     </body>

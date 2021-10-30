@@ -6,6 +6,19 @@ const keyIdentifier = (e) => {
     key = e.key;
 }
 
+function cellCode(e) {
+    const pressed = e.target.innerHTML;
+    if(pressed === 'up') {
+        key = 'w';
+    } else if (pressed === 'down') {
+        key = 's';
+    } else if (pressed === 'left') {
+        key = 'a';
+    } else if (pressed === 'right') {
+        key = 'd';
+    }
+  }
+
 window.setInterval(function() {
     if(key === 'w') {
         snake.goUp();
@@ -24,13 +37,21 @@ window.setInterval(function() {
         snake.checkMouth(apple);
         updateSnake();
     }
-  }, 200); // 1000 milliseconds (1 second)
+
+    if(gameover) {
+        alert("GAME OVER!");
+        window.location.reload();
+    }
+
+  }, speed); // 1000 milliseconds (1 second)
 
 
 const updateScore = () => {
     counter++;
     score.innerHTML = 'score: ' + counter;
 }
+
+
 
 
 
