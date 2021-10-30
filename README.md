@@ -1,4 +1,4 @@
-# JAVASCRIPT SNAKE
+# 🐍 JAVASCRIPT SNAKE 🐍
 This project is a simple game known by many people as simply "snake game". To practice using classes and objects, I tried making my own version of it.
 ## Technologies
 - Vanilla Javascript
